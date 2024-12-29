@@ -3,8 +3,19 @@ import LogoBox from "./LogoBox";
 import { IoSunnyOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import category from "../../assets/data/category.json";
+import { motion } from "framer-motion";
 
-const MobileNav = () => {
+const MobileNav = ({
+  isOpen,
+  setIsOpen,
+  themeChecked,
+  setThemeChecked,
+}: {
+  isOpen: boolean;
+  setIsOpen: (boolean: boolean) => boolean;
+  themeChecked: boolean;
+  setThemeChecked: (boolean: boolean) => boolean;
+}) => {
   const handleThemeChange = () => {
     const html = document.querySelector("html");
     if (html?.classList.contains("light")) {
@@ -14,9 +25,20 @@ const MobileNav = () => {
       html?.classList.remove("dark");
       html?.classList.add("light");
     }
+    setThemeChecked(!themeChecked);
   };
+
+  function handleNav() {
+    setIsOpen(false);
+  }
   return (
-    <div className="bg-white dark:bg-black z-10 absolute w-full h-screen">
+    <motion.div
+      initial={{ x: "100%" }}
+      animate={{ x: isOpen ? "0%" : "100%" }}
+      transition={{ duration: 0.3, ease: "anticipate" }}
+      id="mobileNav"
+      className="bg-white dark:bg-black z-10 top-0 right-0 px-6 py-9 fixed w-full h-screen"
+    >
       <div className="flex justify-between">
         <LogoBox />
         <div className="flex gap-4 items-center ">
@@ -26,12 +48,13 @@ const MobileNav = () => {
               value=""
               className="sr-only peer "
               onChange={handleThemeChange}
+              checked={themeChecked}
             />
             <div className="after:z-10 relative w-11 h-6  bg-black peer-focus:outline-none dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] dark:after:bg-black after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-white "></div>
             <MdOutlineDarkMode className="absolute text-white right-1 text-sm z-0" />
             <IoSunnyOutline className="absolute left-1 text-sm text-black z-0" />
           </label>
-          <div>
+          <div className="cursor-pointer" onClick={handleNav}>
             <svg
               width="21"
               height="19"
@@ -86,17 +109,13 @@ const MobileNav = () => {
       <div>
         <ul className="flex flex-col text-xl gap-3 text-slate-600 mt-7">
           {category.map((nav) => (
-            <Link to={nav.link} key={nav.id}>
-              <p
-                className={`hover:border-b hover:border-b-black dark:hover:border-b-white transition-all duration-200`}
-              >
-                {nav.name.toLocaleUpperCase("az")}
-              </p>
+            <Link to={nav.link} key={nav.id} onClick={handleNav}>
+              <p>{nav.name.toLocaleUpperCase("az")}</p>
             </Link>
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

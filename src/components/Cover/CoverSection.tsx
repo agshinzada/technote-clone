@@ -2,7 +2,7 @@ import CoverSectionItem from "./CoverSectionItem";
 
 const CoverSection = () => {
   return (
-    <div className=" grid-cols-2 md:grid-cols-3 gap-6 mb-5 mt-2 md:mt-0 md:mb-0 md:my-8 grid">
+    <div className=" grid-cols-2 md:grid-cols-3 gap-6 mb-5 mt-2 md:my-8 grid">
       <div className="col-span-2">
         <CoverSectionItem
           data={{

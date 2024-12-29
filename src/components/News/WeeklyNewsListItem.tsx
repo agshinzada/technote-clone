@@ -12,11 +12,18 @@ interface WeeklyListItemProps {
   categoryUrl: string;
 }
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 const WeeklyNewsListItem = ({ data }: { data: WeeklyListItemProps }) => {
   return (
     <div className="flex flex-col h-full">
       <div className="relative h-[19rem] col-span-4">
-        <Link to={`/${data.categoryUrl}/${data.link}`}>
+        <Link to={`/${data.categoryUrl}/${data.link}`} onClick={scrollToTop}>
           <img
             src={data.image}
             alt="post"
@@ -24,9 +31,13 @@ const WeeklyNewsListItem = ({ data }: { data: WeeklyListItemProps }) => {
           />
         </Link>
       </div>
-      <a href="" className="text-xl font-bold mt-2.5 hover:underline">
+      <Link
+        to={`/${data.categoryUrl}/${data.link}`}
+        className="text-xl font-bold mt-2.5 hover:underline"
+        onClick={scrollToTop}
+      >
         <p>{data.title}</p>
-      </a>
+      </Link>
     </div>
   );
 };

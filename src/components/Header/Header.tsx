@@ -6,7 +6,17 @@ import Navbar from "./Navbar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MobileNav from "./MobileNav";
-const Header = () => {
+const Header = ({
+  isOpen,
+  setIsOpen,
+  themeChecked,
+  setThemeChecked,
+}: {
+  isOpen: boolean;
+  setIsOpen: (boolean: boolean) => boolean;
+  themeChecked: boolean;
+  setThemeChecked: (boolean: boolean) => boolean;
+}) => {
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
   function handleSearch(params: React.KeyboardEvent<HTMLInputElement>) {
@@ -26,7 +36,13 @@ const Header = () => {
       html?.classList.remove("dark");
       html?.classList.add("light");
     }
+    setThemeChecked(!themeChecked);
   };
+
+  function handleMenu() {
+    setIsOpen(true);
+  }
+
   return (
     <div className="mb-3 mt-6 flex flex-col gap-7 relative">
       <div className="flex items-center justify-between">
@@ -38,6 +54,7 @@ const Header = () => {
               type="checkbox"
               value=""
               className="sr-only peer "
+              checked={themeChecked}
               onChange={handleThemeChange}
             />
             <div className="after:z-10 relative w-11 h-6  bg-black peer-focus:outline-none dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] dark:after:bg-black after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-white "></div>
@@ -73,7 +90,7 @@ const Header = () => {
             </div>
           </div>
           {/* Mobile nav */}
-          <div>
+          <div onClick={handleMenu} className="cursor-pointer">
             <svg
               width="25"
               height="17"
@@ -94,7 +111,12 @@ const Header = () => {
         </div>
       </div>
       <Navbar />
-      <MobileNav />
+      <MobileNav
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        themeChecked={themeChecked}
+        setThemeChecked={setThemeChecked}
+      />
     </div>
   );
 };

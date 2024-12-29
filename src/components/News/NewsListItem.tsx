@@ -2,26 +2,31 @@ import Button from "../Button/Button";
 import { NewsListItemProps } from "../../types/news";
 import { Link, useParams } from "react-router-dom";
 
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
 const NewsListItem = ({ data }: { data: NewsListItemProps }) => {
   const params = useParams();
+  console.log(params);
   let url: string = "";
   if (params.category) {
-    url = `${data.link}`;
+    url = `/${data.categoryUrl}/${data.link}`;
   } else {
     url = `/${data.categoryUrl}/${data.link}`;
   }
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <div className="flex flex-col md:grid md:grid-cols-9 gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-colors duration-150 relative">
       <div className="relative h-60 md:h-48 col-span-4">
-        <Link to={url} onClick={scrollToTop} replace>
+        <Link
+          to={`/${data.categoryUrl}/${data.link}`}
+          onClick={scrollToTop}
+          replace={true}
+        >
           <img
             src={data.image}
             alt="post"
@@ -30,14 +35,18 @@ const NewsListItem = ({ data }: { data: NewsListItemProps }) => {
         </Link>
       </div>
       <div className="col-span-5 p-1">
-        <Link to={url} onClick={scrollToTop}>
+        <Link to={`/${data.categoryUrl}/${data.link}`} onClick={scrollToTop}>
           <h2 className="text-lg font-extrabold cursor-pointer hover:underline">
             {data.title}
           </h2>
         </Link>
 
         <div className="mt-2 flex flex-col justify-between">
-          <Link to={url} className="row-span-4" onClick={scrollToTop}>
+          <Link
+            to={`/${data.categoryUrl}/${data.link}`}
+            className="row-span-4"
+            onClick={scrollToTop}
+          >
             <p className="text-xs hover:underline flex-grow cursor-pointer ">
               {data.summary}
             </p>
