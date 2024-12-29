@@ -19,7 +19,6 @@ const AboutPage = () => {
           className="rounded-md max-h-[512px] w-auto"
         />
       </div>
-
       <p>
         &nbsp; &nbsp; Bu istiqamətdə çalışan komandamız hər il sahənin ən böyük
         texnologiya konfrasnlarında iştirak etməklə, hadisə yerindən ən son

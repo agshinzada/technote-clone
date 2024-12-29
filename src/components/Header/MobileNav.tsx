@@ -1,10 +1,12 @@
 import { MdOutlineDarkMode } from "react-icons/md";
 import LogoBox from "./LogoBox";
 import { IoSunnyOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import category from "../../assets/data/category.json";
 import { motion } from "framer-motion";
 import { MenuType } from "../../types/nav";
+import { useState } from "react";
+import SearchInput from "../SearchInput";
 
 const MobileNav = ({
   isOpen,
@@ -12,6 +14,8 @@ const MobileNav = ({
   themeChecked,
   setThemeChecked,
 }: MenuType) => {
+  const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState("");
   const handleThemeChange = () => {
     const html = document.querySelector("html");
     if (html?.classList.contains("light")) {
@@ -26,6 +30,15 @@ const MobileNav = ({
 
   function handleNav() {
     setIsOpen(false);
+  }
+
+  function handleSearch(params: React.KeyboardEvent<HTMLInputElement>): void {
+    if (params.key === "Enter") {
+      if (searchValue.trim() !== "") {
+        navigate(`/axtar?contains=${searchValue}`);
+        handleNav();
+      }
+    }
   }
   return (
     <motion.div
@@ -72,15 +85,10 @@ const MobileNav = ({
       {/* search */}
 
       <div className="relative w-full mt-9">
-        <input
-          id="search"
-          type="text"
-          name="name"
-          className="bg-white border border-black dark:bg-black dark:border-white rounded-lg w-full h-[40px] px-3 py-1 focus:outline-none text-sm"
-          placeholder="Axtar"
-          // onChange={(e) => setSearchValue(e.target.value)}
-          // onKeyDown={handleSearch}
-          required
+        <SearchInput
+          size={true}
+          handleSearch={handleSearch}
+          setSearchValue={setSearchValue}
         />
         <div className="w-5 absolute right-2 top-[10px] ">
           <svg

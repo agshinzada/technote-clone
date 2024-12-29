@@ -29,7 +29,7 @@ const NewsDetailPage = () => {
             Oyunlar artıq belə görünəcək: Unreal Engine 5.5-dən yeni video
             yayımlanıb!
           </h2>
-          <div className="flex justify-between gap-2">
+          <div className="flex justify-between gap-2 md:flex-row flex-col">
             <div className="flex gap-3">
               <Button label={"Elm & Texnologiya"} link="" hover={true} />
               <Button label={"27.12.2024"} link="" hover={true} />
@@ -101,10 +101,10 @@ const NewsDetailPage = () => {
               <span>Linki kopyala</span>
             </ButtonCustom>
             <ButtonCustom>
-              <img src={facebook} alt="facebook" className="w-6" />
+              <img src={facebook} alt="facebook" className="w-3" />
               <img src={twitter} alt="facebook" className="w-6" />
-              <img src={whatsapp} alt="facebook" className="w-6" />
-              <img src={linkedin} alt="facebook" className="w-6" />
+              <img src={whatsapp} alt="facebook" className="w-5" />
+              <img src={linkedin} alt="facebook" className="w-5" />
             </ButtonCustom>
           </div>
           <div className="flex gap-3">

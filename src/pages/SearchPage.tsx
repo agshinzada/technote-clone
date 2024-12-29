@@ -79,7 +79,7 @@ const SearchPage = () => {
         <FilterButton label="Yeni" link="" hover={true} />
         <FilterButton label="Aktual" link="" hover={true} />
       </div>
-      <div className="grid grid-cols-3 gap-14 mt-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-14 my-8">
         <div className="col-span-2">
           <Button label="Xəbər axını" link="" hover={true} />
           <NewsList data={data} />

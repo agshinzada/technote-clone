@@ -12,7 +12,7 @@ const ButtonWithImage = ({
   const navigate = useNavigate();
   return (
     <button
-      className={`text-xs py-1 px-3 border border-black rounded-md dark:border-white dark:hover:text-black flex gap-2 items-center relative ${
+      className={`text-xs py-1 px-3 border  w-fit border-black rounded-md dark:border-white dark:hover:text-black flex gap-2 items-center relative ${
         hover ? "hover:bg-[#efefef]" : ""
       }`}
       type="button"

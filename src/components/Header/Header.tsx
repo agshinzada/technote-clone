@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import { MenuType } from "../../types/nav";
+import SearchInput from "../SearchInput";
 const Header = ({
   isOpen,
   setIsOpen,
@@ -15,6 +16,7 @@ const Header = ({
 }: MenuType) => {
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
+
   function handleSearch(params: React.KeyboardEvent<HTMLInputElement>) {
     if (params.key === "Enter") {
       if (searchValue.trim() !== "") {
@@ -58,13 +60,10 @@ const Header = ({
             <IoSunnyOutline className="absolute left-1 text-sm text-black z-0" />
           </label>
           <div className="relative md:block hidden">
-            <input
-              type="search"
-              name="search"
-              className="bg-white border border-black dark:bg-black dark:border-white rounded-lg w-[120px] h-[24px] px-3 py-1 focus:outline-none text-xs"
-              placeholder="Axtar"
-              onChange={(e) => setSearchValue(e.target.value)}
-              onKeyDown={handleSearch}
+            <SearchInput
+              size={false}
+              handleSearch={handleSearch}
+              setSearchValue={setSearchValue}
             />
             <div className="w-5 absolute right-1 top-[4px]">
               <svg
