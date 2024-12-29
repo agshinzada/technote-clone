@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Mulish", serif;
+  color: black;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.active {
+  border: 1px solid #000000;
+  border-radius: 0.375rem;
+}
+.dark .active {
+  border: 1px solid #ffffff;
+  border-radius: 0.375rem;
+}
+
+.active:hover {
+  background-color: #efefef;
+}
+.dark .active:hover {
+  color: black;
+}
+
+html {
+  scroll-behavior: smooth;
+}

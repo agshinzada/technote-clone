@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "name": "Ana səhifə",
+        "link": "/"
+    },
+    {
+        "id": 2,
+        "name": "Cihazlar+",
+        "link": "/mobil-cihazlar"
+    },
+    {
+        "id": 3,
+        "name": "Sosial Media",
+        "link": "/sosial-media"
+    },
+    {
+        "id": 4,
+        "name": "Elm & Texnologiya",
+        "link": "/texnologiya-xeberleri"
+    },
+    {
+        "id": 5,
+        "name": "Nəqliyyat",
+        "link": "/neqliyyat"
+    },
+    {
+        "id": 6,
+        "name": "Təhlükəsizlik",
+        "link": "/kibertehlukesizlik"
+    },
+    {
+        "id": 7,
+        "name": "Süni İntellekt",
+        "link": "/suni-zeka-ve-elm"
+    },
+    {
+        "id": 8,
+        "name": "Proqram Təminatı",
+        "link": "/proqram-teminati"
+    },
+    {
+        "id": 9,
+        "name": "Tech Azərbaycan",
+        "link": "/tech-azerbaijan"
+    },
+    {
+        "id": 10,
+        "name": "Tech Biznes",
+        "link": "/tech-biznes"
+    },
+    {
+        "id": 11,
+        "name": "Digər",
+        "link": "/diger"
+    }
+]
