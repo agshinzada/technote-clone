@@ -1,6 +1,6 @@
 import Button from "../Button/Button";
 import { NewsListItemProps } from "../../types/news";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const scrollToTop = () => {
   window.scrollTo({
@@ -10,15 +10,6 @@ const scrollToTop = () => {
 };
 
 const NewsListItem = ({ data }: { data: NewsListItemProps }) => {
-  const params = useParams();
-  console.log(params);
-  let url: string = "";
-  if (params.category) {
-    url = `/${data.categoryUrl}/${data.link}`;
-  } else {
-    url = `/${data.categoryUrl}/${data.link}`;
-  }
-
   return (
     <div className="flex flex-col md:grid md:grid-cols-9 gap-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-colors duration-150 relative">
       <div className="relative h-60 md:h-48 col-span-4">

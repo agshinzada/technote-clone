@@ -4,18 +4,14 @@ import { IoSunnyOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import category from "../../assets/data/category.json";
 import { motion } from "framer-motion";
+import { MenuType } from "../../types/nav";
 
 const MobileNav = ({
   isOpen,
   setIsOpen,
   themeChecked,
   setThemeChecked,
-}: {
-  isOpen: boolean;
-  setIsOpen: (boolean: boolean) => boolean;
-  themeChecked: boolean;
-  setThemeChecked: (boolean: boolean) => boolean;
-}) => {
+}: MenuType) => {
   const handleThemeChange = () => {
     const html = document.querySelector("html");
     if (html?.classList.contains("light")) {

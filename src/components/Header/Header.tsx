@@ -6,17 +6,13 @@ import Navbar from "./Navbar";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import MobileNav from "./MobileNav";
+import { MenuType } from "../../types/nav";
 const Header = ({
   isOpen,
   setIsOpen,
   themeChecked,
   setThemeChecked,
-}: {
-  isOpen: boolean;
-  setIsOpen: (boolean: boolean) => boolean;
-  themeChecked: boolean;
-  setThemeChecked: (boolean: boolean) => boolean;
-}) => {
+}: MenuType) => {
   const [searchValue, setSearchValue] = useState("");
   const navigate = useNavigate();
   function handleSearch(params: React.KeyboardEvent<HTMLInputElement>) {
