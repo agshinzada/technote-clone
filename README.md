@@ -1,50 +1,74 @@
-# React + TypeScript + Vite
+# Technote.az Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a clone of the popular Azerbaijani tech news website [Technote.az](https://technote.az). It is built using modern web development technologies like React.js with Typescript to replicate the design and functionality of the original site.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React.js** with **Typescript** and **React Router**: For building the frontend and managing routes.
+- **Tailwind CSS**: For styling and creating a responsive layout.
+- **Dummy Data**: Used to simulate real article content and categories
 
-## Expanding the ESLint configuration
+## Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Live version: https://technote-clone-chi.vercel.app/
 
-- Configure the top-level `parserOptions` property like this:
+More detail: https://agshin.dev/projects/technote
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Features
+
+**Home Page**
+
+- Displays the latest news articles with titles, images, and brief descriptions.
+- Includes navigation to categories and featured articles.  
+  **About Page**
+- Provides information about the website, its purpose, and the team (dummy content).  
+  **Category Page**
+- Lists articles filtered by selected categories (e.g., Technology, Business).
+- Pagination for easy navigation of large datasets.  
+  **News Detail Page**
+- Displays the full article with a title, image, and content.
+- Shows related news and sharing options.  
+  **Contact Page**
+  - Includes a contact form for users to send messages.  
+    **Responsive Design**
+- Fully optimized for mobile, tablet, and desktop devices.
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/agshinzada/technote-clone.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Go to the project directory
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+  cd technote-clone
 ```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+## Authors
+
+- [@agshinzada](https://www.github.com/agshinzada)
+
+## Feedback
+
+If you have any feedback, please reach out to us at agshinzada@gmail.com
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+![Logo](https://agshindev.vercel.app/static/media/logo-black.b257b35d55c3c756c196b24752d91b22.svg)
