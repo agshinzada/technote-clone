@@ -10,28 +10,27 @@ This project is a clone of the popular Azerbaijani tech news website [Technote.a
 
 ## Demo
 
-Live version: https://technote-clone-chi.vercel.app/
+Live version: [Technote - demo](https://technote-clone-chi.vercel.app/)
 
-More detail: https://agshin.dev/projects/technote
+More detail: [Visit my website](https://agshin.dev/projects/technote)
 
 ## Features
 
-**Home Page**
-
-- Displays the latest news articles with titles, images, and brief descriptions.
-- Includes navigation to categories and featured articles.  
-  **About Page**
-- Provides information about the website, its purpose, and the team (dummy content).  
-  **Category Page**
-- Lists articles filtered by selected categories (e.g., Technology, Business).
-- Pagination for easy navigation of large datasets.  
-  **News Detail Page**
-- Displays the full article with a title, image, and content.
-- Shows related news and sharing options.  
-  **Contact Page**
-  - Includes a contact form for users to send messages.  
-    **Responsive Design**
-- Fully optimized for mobile, tablet, and desktop devices.
+- **Home Page**
+  - Displays the latest news articles with titles, images, and brief descriptions.
+  - Includes navigation to categories and featured articles.
+- **About Page**
+  - Provides information about the website, its purpose, and the team (dummy content).
+- **Category Page**
+  - Lists articles filtered by selected categories (e.g., Technology, Business).
+  - Pagination for easy navigation of large datasets.
+- **News Detail Page**
+  - Displays the full article with a title, image, and content.
+  - Shows related news and sharing options.
+- **Contact Page**
+  - Includes a contact form for users to send messages.
+- **Responsive Design**
+  - Fully optimized for mobile, tablet, and desktop devices.
 
 ## Run Locally
 
@@ -69,6 +68,10 @@ If you have any feedback, please reach out to us at agshinzada@gmail.com
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://agshin.dev/images/technote-cover.webp)
 
-![Logo](https://agshindev.vercel.app/static/media/logo-black.b257b35d55c3c756c196b24752d91b22.svg)
+## 🔗 Links
+
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://agshin.dev/)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/agshinzada/)
+[![twitter](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://instagram.com/agshin.dev)
