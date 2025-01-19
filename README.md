@@ -6,7 +6,7 @@ This project is a clone of the popular Azerbaijani tech news website [Technote.a
 
 - **React.js** with **Typescript** and **React Router**: For building the frontend and managing routes.
 - **Tailwind CSS**: For styling and creating a responsive layout.
-- **Dummy Data**: Used to simulate real article content and categories
+- **Static Data**: Used to simulate real article content and categories
 
 ## Demo
 
